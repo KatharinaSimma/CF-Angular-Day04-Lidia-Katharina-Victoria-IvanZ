@@ -1,0 +1,24 @@
+<h2>Blogs</h2>
+
+<div *ngFor="let x of bloglist; index as blogId">
+    <hr>
+ 
+<h3>
+    <a [routerLink]="['/blogDetails', blogId]">
+        {{ x.title }}
+      </a> 
+ 
+     
+ </h3>
+
+    <p>
+    {{ x.topic }} </p>
+   <!--  <p>
+    {{ x.text }}
+    </p> -->
+    <p *ngIf="x.text">
+        Text: {{ x.text }}<!-- only create(!) the paragraph if the text exists in blos.ts-->
+    </p>
+    
+
+</div>
